@@ -4,7 +4,7 @@
   "description": "Eidos Design Copilot – README 🚀 Overview Eidos Design Copilot is a visual, AI-powered platform for creating, editing, and managing design systems with zero coding. Features include a drag-and-drop playground (Blocks UI), ready-to-use component templates, real-time AI audits, and one-click deploy on Vercel with Supabase integration.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
@@ -21,11 +21,18 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/jest": "^29.5.14",
     "@types/node": "24.1.0",
     "@types/react": "19.1.8",
     "autoprefixer": "^10.4.21",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
+    "ts-jest": "^29.4.0",
     "typescript": "5.8.3"
   }
 }
