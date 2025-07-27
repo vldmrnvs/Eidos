@@ -24,28 +24,17 @@ Modern UI (DaisyUI, MagicUI, or shadcn/ui)
 
 🛠️ Getting Started
 1. Clone the repo
-bash
-Copiar
-Editar
-git clone https://github.com/your-org/eidos-design-copilot.git
-cd eidos-design-copilot
+   git clone https://github.com/your-org/eidos-design-copilot.git
+   cd eidos-design-copilot
 2. Install dependencies
-bash
-Copiar
-Editar
-npm install
+   npm install
 3. Set up Supabase (optional but recommended)
-Go to supabase.com and create a free account.
+   - Go to supabase.com and create a free account.
+   - Create a new project.
+   - Copy your project URL and anon/public API key from Project Settings → API.
+   - Create the following tables in Supabase using the SQL editor:
 
-Create a new project.
-
-Go to Project Settings > API and copy your Project URL and anon/public API key.
-
-Create the following tables in Supabase (SQL Editor):
-
-sql
-Copiar
-Editar
+```
 -- Projects table
 create table projects (
   id uuid default uuid_generate_v4() primary key,
@@ -72,27 +61,25 @@ create table rules (
   category text,
   example text
 );
-4. Create your .env.local file
-env
-Copiar
-Editar
+```
+
+4. Create your `.env.local` file
+
+```
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-If you don’t want to use Supabase, the app will store data in your browser (localStorage/IndexedDB).
+```
+
+If you don’t want to use Supabase, the app stores data in your browser (localStorage/IndexedDB).
 
 5. Run locally
-bash
-Copiar
-Editar
-npm run dev
-Visit http://localhost:3000 to see Eidos in action.
+   npm run dev
+   Visit http://localhost:3000 to see Eidos in action.
 
 6. Deploy on Vercel
-Go to vercel.com, sign in with GitHub, and import your repo.
-
-Set the environment variables (NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY) in the Vercel project settings.
-
-Click Deploy — you’re live!
+   - Go to vercel.com, sign in with GitHub, and import your repo.
+   - Set the environment variables (NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY) in the Vercel project settings.
+   - Click **Deploy** — you’re live!
 
 ⚡ Configuration for Blocks UI & UI Libraries
 Blocks UI is used as the visual playground/canvas.
