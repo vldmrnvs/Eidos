@@ -1,4 +1,4 @@
-import RightPanel from "../components/RightPanel";
+import RightPanel from '../components/RightPanel';
 import Canvas from '../components/Canvas';
 
 export default function Home() {
