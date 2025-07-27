@@ -1,0 +1,28 @@
+{
+  "project_name": "Client DS Example",
+  "components": [
+    {
+      "name": "Primary button (CTA)",
+      "properties": {
+        "label": "Send",
+        "color": "#1D4ED8",
+        "size": "medium"
+      }
+    },
+    {
+      "name": "Snackbar / Toast",
+      "properties": {
+        "type": "success",
+        "message": "Action completed successfully."
+      }
+    }
+  ],
+  "rules": [
+    { "rule": "All input fields must have a visible label.", "status": "approved" },
+    { "rule": "Minimum font size on mobile is 14px.", "status": "approved" }
+  ],
+  "ai_feedback": [
+    "Primary button has sufficient contrast.",
+    "No input fields without visible labels detected."
+  ]
+}
