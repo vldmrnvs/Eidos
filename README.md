@@ -139,6 +139,17 @@ rules-base.json
 
 project-example.json
 
+📂 Data Directory
+The `/data/` folder stores the default design data used by the app:
+
+```
+data/baseComponents.json   - Base list of available components
+data/knowledgeBase.json    - Design rules and guidelines
+data/exportedProject.json  - Example project exported from Eidos
+```
+
+These files are loaded by the application at start up. The `/samples/` folder, on the other hand, contains minimal JSON templates that you can copy when creating new projects.
+
 🙌 Questions?
 Open an issue or contact Vlad & the team!
 
