@@ -8,6 +8,6 @@ module.exports = {
     ...tsJestPreset.transform,
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  testMatch: ['**/__tests__/**/*.(ts|tsx)'],
+  testMatch: ['**/__tests__/**/*.(ts|tsx)', '<rootDir>/tests/**/*.(ts|tsx)'],
 };
 

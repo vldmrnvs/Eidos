@@ -14,10 +14,14 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.0",
     "daisyui": "^5.0.47",
+    "framer-motion": "^11.0.1",
     "next": "^15.4.4",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
