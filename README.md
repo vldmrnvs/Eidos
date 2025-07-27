@@ -155,3 +155,7 @@ project-example.json
 🙌 Questions?
 Open an issue or contact Vlad & the team!
 
+
+## Quick Start
+
+Run `npm install` then `npm run dev` to launch the app locally at http://localhost:3000.

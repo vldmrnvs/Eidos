@@ -1,0 +1,6 @@
+{
+  "rules": [
+    {"rule": "Use accessible colors", "category": "Accessibility"},
+    {"rule": "Consistent spacing", "category": "Layout"}
+  ]
+}

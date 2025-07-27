@@ -1,0 +1,6 @@
+{
+  "components": [
+    {"name": "Button", "category": "Base", "properties": {"text": "Button"}},
+    {"name": "Card", "category": "Base", "properties": {"title": "Card"}}
+  ]
+}
