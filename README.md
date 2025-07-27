@@ -1,159 +1,49 @@
-Eidos Design Copilot – README
-🚀 Overview
-Eidos Design Copilot is a visual, AI-powered platform for creating, editing, and managing design systems with zero coding.
-Features include a drag-and-drop playground (Blocks UI), ready-to-use component templates, real-time AI audits, and one-click deploy on Vercel with Supabase integration.
+# Eidos Demo
 
-✨ Features
-Visual editor/playground (Blocks UI-based, drag-and-drop)
+This project is a simplified Next.js + TypeScript starter showcasing reusable UI components built with TailwindCSS, shadcn/ui patterns and Framer Motion.
 
-Fully editable design system projects (import/export JSON)
+## Stack
 
-Component library (your exact base list, editable)
+- **Next.js** for the React framework
+- **TypeScript** for type safety
+- **TailwindCSS** for utility-first styling
+- **Framer Motion** for animations
+- **Jest** and **Testing Library** for basic unit tests
 
-Rules/knowledge base (import/export JSON, always editable)
+## Getting Started
 
-AI Copilot (feedback, audit, suggestions, with user API keys)
-
-Deployable on Vercel
-
-Persistent storage via Supabase (with fallback to local browser storage)
-
-Modern UI (DaisyUI, MagicUI, or shadcn/ui)
-
-100% English documentation & UI
-
-🛠️ Getting Started
-1. Clone the repo
-   git clone https://github.com/your-org/eidos-design-copilot.git
-   cd eidos-design-copilot
-2. Install dependencies
-   npm install
-3. Set up Supabase (optional but recommended)
-   - Go to supabase.com and create a free account.
-   - Create a new project.
-   - Copy your project URL and anon/public API key from Project Settings → API.
-   - Create the following tables in Supabase using the SQL editor:
-
-```
--- Projects table
-create table projects (
-  id uuid default uuid_generate_v4() primary key,
-  name text,
-  data jsonb,
-  created_at timestamp default now()
-);
-
--- Components table
-create table components (
-  id uuid default uuid_generate_v4() primary key,
-  project_id uuid references projects(id),
-  name text,
-  category text,
-  description text,
-  properties jsonb
-);
-
--- Rules table
-create table rules (
-  id uuid default uuid_generate_v4() primary key,
-  project_id uuid references projects(id),
-  rule text,
-  category text,
-  example text
-);
+```bash
+npm install
+npm run dev
 ```
 
-4. Create your `.env.local` file
+Visit `http://localhost:3000` to see the demo.
 
-```
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
-```
+## Available Pages
 
-If you don’t want to use Supabase, the app stores data in your browser (localStorage/IndexedDB).
+- `/` – examples of all UI components with animations
+- `/login` – animated login form
+- `/dashboard` – protected page loading sample data from `/data`
+- `/about` – simple about page
 
-5. Run locally
-   npm run dev
-   Visit http://localhost:3000 to see Eidos in action.
+## Using Animations
 
-6. Deploy on Vercel
-   - Go to vercel.com, sign in with GitHub, and import your repo.
-   - Set the environment variables (NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY) in the Vercel project settings.
-   - Click **Deploy** — you’re live!
+All interactive components use Framer Motion. Example snippet:
 
-⚡ Configuration for Blocks UI & UI Libraries
-Blocks UI is used as the visual playground/canvas.
-
-DaisyUI, MagicUI, or shadcn/ui + Tailwind are used for the dashboard, panels, dialogs, forms, etc.
-
-You can customize styles freely, but DO NOT change the default component list or rules unless editing via the UI.
-
-🧩 Import/Export JSON
-Projects, components, and rules can be imported/exported as JSON at any time.
-
-All JSON structures must match the provided templates (see sample-components.json, sample-rules.json, and sample-project.json in the repo).
-
-Exports are ready for Figma plugins, Storybook, or other tools.
-
-🤖 AI Copilot Setup
-In the Settings/API Key panel, enter your own OpenAI, Groq, Mistral, or Gemini API key.
-
-API keys are never stored on our servers — only in your browser/session.
-
-If no key is set, AI features will be disabled until you add one.
-
-🧑‍🎨 How to use Eidos
-Start a new project from scratch, import, or use the Eidos Base System.
-
-Edit visually using the drag-and-drop playground.
-
-Add, edit, or remove components and rules in real time.
-
-Ask the AI Copilot for audits, feedback, or suggestions (AI always uses your loaded rules).
-
-Export your project as JSON when done (for Figma, Storybook, etc.).
-
-🏗️ Customization & Advanced
-You can extend, fork, or style the app further using DaisyUI, MagicUI, or shadcn/ui.
-
-For advanced users:
-
-Adapt the Supabase schema for multi-user or future authentication.
-
-Integrate new AI providers or design system marketplaces.
-
-📝 Contributing
-PRs and issues welcome! Please keep your changes in line with the Eidos philosophy:
-designer-first, simple, no vendor lock-in, always editable.
-
-📄 License
-MIT License.
-© 2024 Eidos Design Copilot, your-org.
-
-📦 Sample JSON Files
-See /samples/ for:
-
-components-base.json
-
-rules-base.json
-
-project-example.json
-
-📂 Data Directory
-The `/data/` folder stores the default design data used by the app:
-
-```
-data/baseComponents.json   - Base list of available components
-data/knowledgeBase.json    - Design rules and guidelines
-data/exportedProject.json  - Example project exported from Eidos
+```tsx
+<motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+  Hover me
+</motion.button>
 ```
 
-These files are loaded by the application at start up. The `/samples/` folder, on the other hand, contains minimal JSON templates that you can copy when creating new projects.
+## Testing
 
-🙌 Questions?
-Open an issue or contact Vlad & the team!
+Run unit tests with:
 
+```bash
+npm test
+```
 
-## Quick Start
+## Data
 
-Run `npm install` then `npm run dev` to launch the app locally at http://localhost:3000.
+The `data/` directory contains JSON files with base components used in the examples. These files must remain untouched.
