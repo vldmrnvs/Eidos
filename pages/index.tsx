@@ -7,14 +7,14 @@ export default function Home() {
       {/* Left Sidebar */}
       <aside className="w-20 bg-base-200 p-4 flex flex-col justify-between">
         <nav className="space-y-4">
-          <button className="btn btn-ghost btn-lg">🏠</button>
-          <button className="btn btn-ghost btn-lg">📚</button>
-          <button className="btn btn-ghost btn-lg">📏</button>
-          <button className="btn btn-ghost btn-lg">⚙️</button>
-          <button className="btn btn-ghost btn-lg">🗂️</button>
+          <button className="btn btn-ghost btn-lg" aria-label="Home">🏠</button>
+          <button className="btn btn-ghost btn-lg" aria-label="Library">📚</button>
+          <button className="btn btn-ghost btn-lg" aria-label="Measure">📏</button>
+          <button className="btn btn-ghost btn-lg" aria-label="Settings">⚙️</button>
+          <button className="btn btn-ghost btn-lg" aria-label="Projects">🗂️</button>
         </nav>
         <div className="mt-auto">
-          <button className="btn btn-ghost">🔑</button>
+          <button className="btn btn-ghost" aria-label="API Key">🔑</button>
         </div>
       </aside>
 
@@ -28,7 +28,7 @@ export default function Home() {
             placeholder="Project Name"
           />
           <div className="space-x-2">
-            <button className="btn">🤖</button>
+            <button className="btn" aria-label="AI Copilot">🤖</button>
             <button className="btn">💾 Export</button>
           </div>
         </header>
